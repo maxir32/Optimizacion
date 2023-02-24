@@ -1,0 +1,325 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: content-box;
+    background: url(assets/img/kalem4.png);
+    background-size: cover;
+  }
+
+html {
+  font-size: 100%;
+  font-style: normal;
+}
+
+header {
+    font-family: 'Karla', sans-serif;
+    display: flex;
+    height: 100px;
+    background-image: linear-gradient(to left, #aaebe87c, #a0efe07e, #9cf3d381, #a0f5c27c, #adf6ad81);
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 100px;
+    margin: 50px;
+    -webkit-animation: logokalem 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: logokalem 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes logokalem {
+    0% {
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+        opacity: 1;
+    }
+}
+
+@keyframes logokalem {
+    0% {
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+        opacity: 1;
+    }
+}
+ header h1 {
+    font-family: 'Karla', sans-serif;
+    text-align: left;
+    color: white;
+    
+  }
+  h1:hover {
+    text-decoration: none;
+    color: aquamarine;
+  }
+
+  #imgCarrito {
+    width: 50px;
+    height: 50px;
+    background-image: url(assets/img/carrito2.png);
+    background-size: cover;
+    transition: 0.4s;
+    position: absolute;
+    right: 13%;
+    top: 94px;
+  }
+  
+  #imgCarrito:hover {
+    background-image: url(assets/img/carrito1.png);
+    transform: scale(1.15);
+  }
+
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000000bd;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.6s 0.9s;
+    --transform: translateY(-100vh);
+    --transition: transform 0.8s;
+  }
+  
+  .modal--show {
+    opacity: 1;
+    pointer-events: unset;
+    transition: opacity 0.6s;
+    --transform: translateY(0);
+    --transition: transform 0.8s 0.8s;
+  }
+  
+  .modalContainer {
+    margin: auto;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90%;
+    background-color: rgb(86, 238, 187);
+    border-radius: 6px;
+    padding: 3em 2.5em;
+    display: grid;
+    gap: 1em;
+    place-items: center;
+    grid-auto-columns: 100%;
+    transform: var(--transform);
+    transition: transform 0.3s;
+    transition: var(--transition);
+    overflow: scroll;
+  }
+  
+  .botones {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+  
+  .volver {
+    width: 160px;
+    height: 51px;
+    text-decoration: none;
+    color: white;
+    background-color: #538071;
+    padding: 1em 3em;
+    border: 1px solid;
+    border-radius: 6px;
+    display: inline-block;
+    font-weight: 300;
+    transition: background-color 0.3s;
+  }
+  
+  .volver:hover {
+    color: #002936;
+    background-color: white;
+  }
+  
+  .volverD {
+    width: 160px;
+    height: 51px;
+    text-decoration: none;
+    color: white;
+    background-color: #538071;
+    padding: 1em 3em;
+    border: 1px solid;
+    border-radius: 6px;
+    display: inline-block;
+    font-weight: 300;
+    transition: background-color 0.3s;
+  }
+  
+  .volverD:hover {
+    color: #000000;
+    background-color: aqua;
+  }
+  
+  .total {
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+
+  #contenedorProductos {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 10rem;
+  }
+  .productos {    
+    display: flex;    
+    margin: 1rem;  
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(159, 241, 231, 0.589);
+    border-radius: 50px;
+    box-shadow: 0 0 30px 5px rgba(22, 119, 103, 0.781);
+    padding: 10px;
+  }
+  
+  .productos h4 {
+    font-size: 1.6rem;
+    border-radius: 50px;
+    margin: 20px 0 20px 0
+  }
+  
+  .productos p {
+    font-size: 1.4rem;
+  }
+  
+  .productos img {
+    border-radius: 50px;
+    margin: 20px 0 20px 0
+  }
+  
+  .productos button {
+    color: white;
+    text-decoration: none;
+    width: 140px;
+    height: 40px;
+    background-color: #0e797c;
+    padding: 1em 3em;
+    border: 1px solid;
+    border-radius: 6px;
+    display: inline-block;
+    font-weight: 300;
+    transition: background-color 0.4s;
+  }
+  
+  .productos button:hover {
+    color: #002936;
+    background-color: white;
+  }
+
+footer {
+    display: grid;
+  background-image: linear-gradient(to left, rgba(170, 235, 232, 0.4941176471), rgba(160, 239, 224, 0.4588235294), rgba(156, 243, 211, 0.4784313725), rgba(160, 245, 194, 0.4941176471), rgba(173, 246, 173, 0.5058823529));
+  height: 50%;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 20px;
+}
+.columna h3 {
+    font-family: "Fuzzy Bubbles", cursive;
+    font-size: small;
+    font-weight: bolder;
+    color: black;
+    letter-spacing: 3px;
+    text-align: left;
+    margin: 5px;
+  }
+  .columna p {
+    font-family: "Work Sans", sans-serif;
+    font-weight: bolder;
+    font-size: medium;
+    color: black;
+    line-height: 30px;
+    text-align: left;
+  }
+
+  .productoCarrito {
+    width: 300px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    border: #002936 solid 3px;
+    margin-top: 2px;
+  }
+  
+  .productoCarrito img {
+    width: 200px;
+    height: 100px;
+    object-fit: contain;
+    padding: 3px;
+  }
+  
+  .productoCarrito div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .productoCarrito div section {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+  }
+  
+  .productoCarrito div h4 {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 100%;
+    font-weight: bolder;
+    text-align: center;
+    margin: 0;
+  }
+  
+  .productoCarrito div section p {
+    font-weight: 800;
+  }
+  
+  .productoCarrito div button {
+    width: 100px;
+    background-color: rgb(12, 146, 46);
+    border: rgb(0, 0, 0) solid 2px;
+    font-weight: 600;
+    display: inline-block;
+    transition: background-color 0.4s;
+    border-radius: 6px;
+  }
+  
+  .productoCarrito div button:hover {
+    background-color: rgb(139, 247, 214);
+  }
+  
+  .total {
+    text-align: center;
+  }
+
+  @media screen and (max-width: 426px) {
+    .botones {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
